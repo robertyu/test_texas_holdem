@@ -96,4 +96,4 @@ def after_flop_run(n0, n1, c0, c1, bc, players_num, bb_rate):
 
 
 # hand = [(11, 'C'), (12, 'H'), (6, 'S'), (7, 'S'), (2, 'S')]
-print(after_flop_run(11, 'C', 12, 'H', ['6S', '7S', '2S'], 15, 0.12))
+print(after_flop_run(11, 12, 'C', 'H', ['6S', '7S', '2S'], 15, 0.12))
