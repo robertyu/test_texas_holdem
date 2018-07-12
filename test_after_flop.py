@@ -1,3 +1,33 @@
+def get_num(m):
+    if m == 'A':
+        return 14
+    elif m == 'K':
+        return 13
+    elif m == 'Q':
+        return 12
+    elif m == 'J':
+        return 11
+    elif m == 'T':
+        return 10
+    else:
+        return int(m)
+
+
+def group_consecutives(vals, step=1):
+    """Return list of consecutive lists of numbers from vals (number list)."""
+    run = []
+    result = [run]
+    expect = None
+    for v in vals:
+        if (v == expect) or (expect is None):
+            run.append(v)
+        else:
+            run = [v]
+            result.append(run)
+        expect = v + step
+    return result
+
+
 def after_flop_run(n0, n1, c0, c1, bc, players_num, bb_rate):
     flags = {'allin': False, 'bet': False}
     from collections import Counter
