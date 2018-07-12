@@ -31,15 +31,15 @@ def group_consecutives(vals, step=1):
 def after_flop_run(n0, n1, c0, c1, bc, players_num, bb_rate):
     flags = {'allin': False, 'bet': False}
     from collections import Counter
-    rbc = [(get_num(b[0]), b[1]) for b in bc]
-    hand = rbc.extend([(n0, c0), (n1, c1)])
+    hand = [(get_num(b[0]), b[1]) for b in bc]
+    hand.extend([(n0, c0), (n1, c1)])
 
     # test s
     hand = [(11, 'C'), (12, 'H'), (6, 'S'), (7, 'S'), (2, 'S')]
     # test p
     cs = Counter([h[1] for h in hand])
     ns = [h[0] for h in hand]
-    ns = ns.sort()
+    ns.sort()
     ns = group_consecutives(ns)
     ns_c = Counter([h[0] for h in hand])
 
